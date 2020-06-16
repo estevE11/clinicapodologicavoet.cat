@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Contacte - Clinica Podologica Voet
+        include ../templates/imports.pug
+        link(rel="stylesheet", href="css/contacte/style.css")
+
+    body
+        include ../templates/navbar.pug
+
+        - var img_name = "car3.jpeg"
+        - var header_title = "CONTACTE"
+        include ../templates/header.pug
+
+        .container.form
+            .row
+                .col
+                    .form-in
+                        label Nom
+                        input.form-control#ipt-name(type="text")
+                        
+                        label Correu electronic
+                        input.form-control#ipt-mail(type="text")
+                        
+                        label Telèfon
+                        input.form-control#ipt-tlf(type="text")
+
+                        label Assumpte
+                        input.form-control#ipt-topic(type="text")
+
+                        label Missatge
+                        textarea.form-control#msg(name="Caca", cols="30", rows="10")
+
+        include ../templates/contacte.pug
+
+        include ../templates/footer.pug

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Clinica Podologica Voet
+        include templates/imports.pug
+        link(rel="stylesheet", href="css/style.css")
+
+    body
+        include templates/navbar.pug
+
+        .container-fluid.car
+            #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+                ol.carousel-indicators
+                    li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='1')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='2')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='3')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='4')
+                .carousel-inner
+                    .carousel-item.active
+                        img.d-block.w-100(src='img/car0.jpg')
+                    .carousel-item
+                        img.d-block.w-100(src='img/car1.jpg')
+                    .carousel-item
+                        img.d-block.w-100(src='img/car2.jpeg')
+                    .carousel-item
+                        img.d-block.w-100(src='img/car3.jpeg')
+                    .carousel-item
+                        img.d-block.w-100(src='img/car4.png')
+                a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+        br
+        br
+        .container
+            .row
+                .col
+                    h3 Clinica Podologica <span style="color: var(--main-color)">VOET</span>
+                    br
+                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget commodo ex, tempor facilisis magna. Sed vitae orci eu tellus tincidunt gravida. Aliquam lacinia risus nec sodales dapibus. Vivamus ut neque eget libero placerat fermentum sit amet quis massa. Morbi ornare elit non urna pellentesque molestie. Suspendisse ut eros ut neque ullamcorper fermentum. Quisque eget erat facilisis, commodo orci aliquet, imperdiet leo. Cras ut sollicitudin mi, vitae cursus justo.
+                    p In eu facilisis orci. Cras nec hendrerit metus. Sed tellus metus, suscipit quis velit non, consectetur congue justo. Nulla eu nunc interdum, hendrerit lacus ut, sagittis nisl. Nullam massa ligula, mattis ac pharetra vel, rhoncus sed lorem. Sed lobortis commodo lacus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed eget finibus purus. Ut porta urna nec nisl tincidunt, ut posuere ligula viverra. Nullam porta id orci in vehicula.
+                .col
+                    img(src="img/perfil.jpg" width="100%")
+
+        include templates/contacte.pug
+
+        include templates/footer.pug
