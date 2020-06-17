@@ -18,22 +18,25 @@ html(lang="en")
             .row
                 .col
                     .form-in
-                        label Nom
-                        input.form-control#ipt-name(type="text")
-                        br
-                        label Correu electronic
-                        input.form-control#ipt-mail(type="text")
-                        br
-                        label Telèfon
-                        input.form-control#ipt-tlf(type="text")
-                        br
-                        label Assumpte
-                        input.form-control#ipt-topic(type="text")
-                        br
-                        label Missatge
-                        textarea.form-control#msg(name="Caca", cols="30", rows="10")
-                        br
-                        button.btn.btn-primary.btn-def Enviar
+                        .row
+                            .col
+                                input.form-control#ipt-name(type="text", placeholder="Nom*")
+                                br
+                            .col
+                                input.form-control#ipt-mail(type="text", placeholder="Email*")
+                                br
+                            .col
+                                input.form-control#ipt-tlf(type="text", placeholder="Telèfon")
+                                br
+                        .row
+                            .col
+                                input.form-control#ipt-topic(type="text", placeholder="Assumpte*")
+                                br
+                        .row
+                            .col
+                                textarea.form-control#msg(name="Caca", cols="30", rows="10", placeholder="Missatge*")
+                                br
+                                button.btn.btn-primary.btn-def Enviar
 
         include ../templates/contacte.pug
 
