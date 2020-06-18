@@ -15,16 +15,16 @@ style(type="text/css").
 .container
     .row
         .col
-            nav.navbar.navbar-expand-lg.navbar-nav
-                img.navbar-brand#navbar-logo(src="img/logo0.png")
-                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-                    span.navbar-toggler-icon#navbarSupportedContent.collapse.navbar-collapse
-                
-                .collapse.navbar-collapse#navbarSupportedContent
+            nav.navbar.navbar-expand-lg.navbar-light
+                img#navbar-logo.navbar-brand(src='img/logo0.png')
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarNav.collapse.navbar-collapse
+                    ul.navbar-nav.ml-auto
                     ul.navbar-nav.ml-auto
                         li.nav-item.active
                             a.nav-link(href='/') <span style="color: var(--main-color)"> INICI </span>
-                        li.nav-item.active
+                        li.nav-item
                             a.nav-link(href='/serveis') SERVEIS
-                        li.nav-item.active
+                        li.nav-item
                             a.nav-link(href='/contacte') CONTACTE
