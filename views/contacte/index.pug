@@ -6,6 +6,7 @@ html(lang="en")
         title Contacte - Clinica Podologica Voet
         include ../templates/imports.pug
         link(rel="stylesheet", href="css/contacte/style.css")
+        script(src='https://smtpjs.com/v3/smtp.js')
 
     body
         include ../templates/navbar.pug
@@ -30,14 +31,55 @@ html(lang="en")
                                 br
                         .row
                             .col
-                                input.form-control#ipt-topic(type="text", placeholder="Assumpte*")
+                                input.form-control#ipt-subject(type="text", placeholder="Assumpte*")
                                 br
                         .row
                             .col
                                 textarea.form-control#msg(name="Caca", cols="30", rows="10", placeholder="Missatge*")
                                 br
-                                button.btn.btn-primary.btn-def Enviar
+                                button.btn.btn-primary.btn-def(onclick="buttonSend()") Enviar
+        br
+        .container
+            .row
+                .col
+                    button.btn.btn-primary.collapsed#btn-open-col(data-toggle="collapse", data-target="#col", hidden, aria-expanded="false")
+                    .collapse#col
+                        .alert.alert-success#email-alert Missatge enviat correctament
 
         include ../templates/contacte.pug
 
         include ../templates/footer.pug
+
+        script.
+            function buttonSend() {
+                let data =  {
+                    sender: $("#ipt-name").val(),
+                    subject: $("#ipt-subject").val(),
+                    body: $("#msg").val(),
+                    telf: $("#ipt-tlf").val(),
+                    name: $("#ipt-name").val(),
+                    mail: $("#ipt-mail").val()
+
+                }
+                sendEmail(data);
+            }
+
+            function sendEmail(data) {
+                console.log(data);
+                Email.send({
+                    SecureToken: "5082fa1c-f21e-4f99-adf8-d9b80a9bad74",
+                    To : "clinicapodologicavoet@gmail.com" /*'clinicapodologicavoet@gmail.com'*/,
+                    From : "rogeresteve30@gmail.com",
+                    Subject : data.subject,
+                    Body : "Nom: " + data.name + "<br>" + "Email: " + data.mail + "<br>" + "Telefon: " + data.telf + "<br><br>" + data.body.replace("\n", "<br>"),
+                }).then(
+                    message => {
+                        console.log(message);
+                        setTimeout(showAlert, 3000);
+                    }
+                );
+            }
+
+            function showAlert() {
+                $("#btn-open-col").click();
+            }
