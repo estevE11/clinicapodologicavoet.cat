@@ -42,9 +42,13 @@ html(lang="en")
         .container
             .row
                 .col
-                    button.btn.btn-primary.collapsed#btn-open-col(data-toggle="collapse", data-target="#col", hidden, aria-expanded="false")
-                    .collapse#col
+                    button.btn.btn-primary.collapsed#btn-open-col-mail(data-toggle="collapse", data-target="#col-mail", hidden, aria-expanded="false")
+                    .collapse#col-mail
                         .alert.alert-success#email-alert Missatge enviat correctament
+
+                    button.btn.btn-primary.collapsed#btn-open-col-min(data-toggle="collapse", data-target="#col-min", hidden, aria-expanded="false")
+                    .collapse#col-min
+                        .alert.alert-danger#min-alert Ha d'omplir els camps obligatoris (*)
 
         include ../templates/contacte.pug
 
@@ -53,7 +57,6 @@ html(lang="en")
         script.
             function buttonSend() {
                 let data =  {
-                    sender: $("#ipt-name").val(),
                     subject: $("#ipt-subject").val(),
                     body: $("#msg").val(),
                     telf: $("#ipt-tlf").val(),
@@ -61,11 +64,17 @@ html(lang="en")
                     mail: $("#ipt-mail").val()
 
                 }
-                sendEmail(data);
+                if(form_min(data)) {
+                    sendEmail(data);
+                } else {
+                    showAlertMin();
+                    setTimeout(showAlertMin, 3000);
+                }
             }
 
             function sendEmail(data) {
-                console.log(data);
+                alert("Caca")
+                return;
                 Email.send({
                     SecureToken: "5082fa1c-f21e-4f99-adf8-d9b80a9bad74",
                     To : "clinicapodologicavoet@gmail.com" /*'clinicapodologicavoet@gmail.com'*/,
@@ -75,11 +84,21 @@ html(lang="en")
                 }).then(
                     message => {
                         console.log(message);
-                        setTimeout(showAlert, 3000);
+                        showAlertMail();
+                        setTimeout(showAlertMail, 3000);
                     }
                 );
             }
 
-            function showAlert() {
-                $("#btn-open-col").click();
+            function form_min(data) {
+                if(data.name == "" || data.mail == "" ||data.telf == "" ||data.subject == "") return false;
+                return true;
+            }
+
+            function showAlertMail() {
+                $("#btn-open-col-mail").click();
+            }
+
+            function showAlertMin() {
+                $("#btn-open-col-min").click();
             }

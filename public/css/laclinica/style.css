@@ -1,0 +1,22 @@
+.carousel-indicators > li > img {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 30px;
+    margin-right: 3px;
+    margin-left: 999px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: 1;
+    transition: opacity .6s ease;
+}
+
+.car {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

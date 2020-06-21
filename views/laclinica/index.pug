@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Contacte - Clinica Podologica Voet
+        include ../templates/imports.pug
+        link(rel="stylesheet", href="css/laclinica/style.css")
+        script(src='https://smtpjs.com/v3/smtp.js')
+
+    body
+        include ../templates/navbar.pug
+
+        - var img_name = "car3.jpeg"
+        - var header_title = "LA CLÍNICA"
+        include ../templates/header.pug
+
+        .container-fluid.car
+            #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+                ol.carousel-indicators
+                    li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+                        img(src='img/car0.jpg')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='1')
+                        img(src='img/car1.jpg')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='2')
+                        img(src='img/car2.jpeg')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='3')
+                        img(src='img/car3.jpeg')
+                    li(data-target='#carouselExampleIndicators', data-slide-to='4')
+                        img(src='img/car4.png')
+                .carousel-inner
+                    .carousel-item.active
+                        img.d-block.w-100(src='img/car0.jpg')
+                    .carousel-item
+                        img.d-block.w-100(src='img/car1.jpg')
+                    .carousel-item
+                        img.d-block.w-100(src='img/perfil.jpg')
+                    .carousel-item
+                        img.d-block.w-100(src='img/car3.jpeg')
+                    .carousel-item
+                        img.d-block.w-100(src='img/car4.png')
+                a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+                    span.carousel-control-prev-icon(aria-hidden='true')
+                    span.sr-only Previous
+                a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+                    span.carousel-control-next-icon(aria-hidden='true')
+                    span.sr-only Next
+     
+        include ../templates/footer.pug
