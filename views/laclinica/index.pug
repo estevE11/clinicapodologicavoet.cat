@@ -11,34 +11,30 @@ html(lang="en")
     body
         include ../templates/navbar.pug
 
-        - var img_name = "car3.jpeg"
+        - var img_name = "DSC_1640-6.jpg"
         - var header_title = "LA CLÍNICA"
         include ../templates/header.pug
+
 
         .container-fluid.car
             #carouselExampleIndicators.carousel.slide(data-ride='carousel')
                 ol.carousel-indicators
-                    li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
-                        img(src='img/car0.jpg')
-                    li(data-target='#carouselExampleIndicators', data-slide-to='1')
-                        img(src='img/car1.jpg')
-                    li(data-target='#carouselExampleIndicators', data-slide-to='2')
-                        img(src='img/car2.jpeg')
-                    li(data-target='#carouselExampleIndicators', data-slide-to='3')
-                        img(src='img/car3.jpeg')
-                    li(data-target='#carouselExampleIndicators', data-slide-to='4')
-                        img(src='img/car4.png')
+                    - var i = 0
+                    each val in files
+                        li(data-target='#carouselExampleIndicators', data-slide-to=i)
+                            img(src='img/laclinica/' + val)
+                        - i++
                 .carousel-inner
-                    .carousel-item.active
-                        img.d-block.w-100(src='img/car0.jpg')
-                    .carousel-item
-                        img.d-block.w-100(src='img/car1.jpg')
-                    .carousel-item
-                        img.d-block.w-100(src='img/perfil.jpg')
-                    .carousel-item
-                        img.d-block.w-100(src='img/car3.jpeg')
-                    .carousel-item
-                        img.d-block.w-100(src='img/car4.png')
+                    - var first = 1
+                    each val in files
+                        if first === 1
+                            .carousel-item.active
+                                img.d-block.w-100(src='img/laclinica/' + val)
+                            - first = 0
+                        else
+                            .carousel-item
+                                img.d-block.w-100(src='img/laclinica/' + val)
+
                 a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
                     span.carousel-control-prev-icon(aria-hidden='true')
                     span.sr-only Previous
