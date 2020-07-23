@@ -24,10 +24,10 @@ html(lang="en")
                                 input.form-control#ipt-name(type="text", placeholder="Nom*")
                                 br
                             .col
-                                input.form-control#ipt-mail(type="text", placeholder="Email*")
+                                input.form-control#ipt-mail(type="text", placeholder="Email")
                                 br
                             .col
-                                input.form-control#ipt-tlf(type="text", placeholder="Telèfon")
+                                input.form-control#ipt-tlf(type="text", placeholder="Telèfon*")
                                 br
                         .row
                             .col
@@ -89,7 +89,7 @@ html(lang="en")
             }
 
             function form_min(data) {
-                if(data.name == "" || data.mail == "" ||data.telf == "" ||data.subject == "") return false;
+                if(data.name == "" || data.body == "" ||data.telf == "" ||data.subject == "") return false;
                 return true;
             }
 
