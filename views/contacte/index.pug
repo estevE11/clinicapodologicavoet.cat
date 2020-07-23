@@ -11,7 +11,7 @@ html(lang="en")
     body
         include ../templates/navbar.pug
 
-        - var img_name = "DSC_1755-17.jpg"
+        - var img_name = "headers/contacte.jpg"
         - var header_title = "CONTACTE"
         include ../templates/header.pug
 
@@ -73,8 +73,6 @@ html(lang="en")
             }
 
             function sendEmail(data) {
-                alert("Caca")
-                return;
                 Email.send({
                     SecureToken: "5082fa1c-f21e-4f99-adf8-d9b80a9bad74",
                     To : "clinicapodologicavoet@gmail.com" /*'clinicapodologicavoet@gmail.com'*/,

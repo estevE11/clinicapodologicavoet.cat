@@ -3,7 +3,7 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Clinica Podologica Voet
+        title Clínica Podològica Voet
         include templates/imports.pug
         link(rel="stylesheet", href="css/style.css")
 
@@ -15,20 +15,11 @@ html(lang="en")
                 ol.carousel-indicators
                     li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
                     li(data-target='#carouselExampleIndicators', data-slide-to='1')
-                    li(data-target='#carouselExampleIndicators', data-slide-to='2')
-                    li(data-target='#carouselExampleIndicators', data-slide-to='3')
-                    li(data-target='#carouselExampleIndicators', data-slide-to='4')
                 .carousel-inner
                     .carousel-item.active
-                        img.d-block.w-100(src='img/car0.jpg')
+                        img.d-block.w-100(src='img/home/car0.jpg')
                     .carousel-item
-                        img.d-block.w-100(src='img/car1.jpg')
-                    .carousel-item
-                        img.d-block.w-100(src='img/car2.jpeg')
-                    .carousel-item
-                        img.d-block.w-100(src='img/car3.jpeg')
-                    .carousel-item
-                        img.d-block.w-100(src='img/car4.png')
+                        img.d-block.w-100(src='img/home/car1.jpg')
                 a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
                     span.carousel-control-prev-icon(aria-hidden='true')
                     span.sr-only Previous
@@ -40,7 +31,7 @@ html(lang="en")
         .container
             .row
                 .col
-                    h3 Clinica Podologica <span class="title_bold" style="color: var(--main-color)">VOET</span>
+                    h3 Clínica Podològica <span class="title_bold" style="color: var(--main-color)">VOET</span>
                     br
                     p El podòleg és un professional de la branca sanitària titulat que ofereix la cura integral dels peus. Diagnostica, i tracta les diferents patologies, alteracions i malalties dels peus o bé treballant de manera conjunta amb altres especialitats mèdiques.
                     p Sóc la Clàudia Calveres, podòloga graduada per la Universitat de Barcelona amb el número de col·legiat 1807. A finals de 2017 amb totes les ganes i tota la i·lusió vaig iniciar aquest projecte a la Roca del Vallès, per oferir el servei de podologia que fins ara no hi era al poble. A la Clínica podologia VOET treballem per a la salut dels nostres pacients, dedicant-nos a diferents àmbits de la podologia i així poder oferir una millor atenció a cada un dels nostres pacients.
@@ -52,7 +43,7 @@ html(lang="en")
                     p T’animo a seguir-nos a les xarxes socials per no perdre’t res i estar informat de les últimes novetats.
                     
                 .col.text-center
-                    img(src="img/DSC_1705-5.jpg" width="100%")
+                    img(src="img/home/ego.jpg" width="75%" height="100%")
 
         include templates/contacte.pug
 
